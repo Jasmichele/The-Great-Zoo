@@ -8,6 +8,12 @@ namespace Company
 {
    public static class Utils
     {
-        //string[] person = new string[];
+        public static void Pay(Employee[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+
+                Console.WriteLine(array[i].F + " got paid");
+        }
+
     }
 }

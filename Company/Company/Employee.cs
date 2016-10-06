@@ -6,23 +6,24 @@ using System.Threading.Tasks;
 
 namespace Company
 {
-   public class Employee : Person
+    public class Employee : Person
     {
         #region variables
         DateTime hireDate;
-        DateTime terminateDate; 
+        DateTime terminateDate;
         double payGrade;
         double hoursWorekd;
         double payRate;
         Department dpt;
-       
-        
-        
-        
- 
+        bool isHired;
+
+
+
+
+
         #endregion
 
-        public Employee() 
+        public Employee()
         {
             
         }
@@ -34,7 +35,7 @@ namespace Company
             {
                 return hireDate;
             }
-       }
+        }
 
         public DateTime TerminateDate
         {
@@ -57,6 +58,60 @@ namespace Company
             }
         }
 
+        public Department Dpt
+        {
+            get
+            {
+                return dpt;
+            }
+
+            set
+            {
+                dpt = value;
+            }
+        }
+
+        public double PayRate
+        {
+            get
+            {
+                return payRate;
+            }
+
+            set
+            {
+                payRate = value;
+            }
+        }
+
+        public bool IsHired
+        {
+            get
+            {
+                return isHired;
+            }
+
+        }
+
+        public bool PayEmployee
+        {
+            set
+            {
+                if (isHired)
+                {
+                    isHired = true;
+                }
+                else if (!isHired)
+                {
+                    isHired = false;
+                }
+
+            }
+                
+                       
+            
+        }
+
         public double HoursWorekd
         {
             get
@@ -70,27 +125,14 @@ namespace Company
             }
         }
 
-        public double PayRate
+        public double Raise()
         {
-            get
-            {
-                return payRate;
-            }
-
+           
+            return payRate * 1.04;
         }
 
-        public Department Dpt
-        {
-            get
-            {
-                return dpt;
-            }
 
-            set
-            {
-                dpt = value;
-            }
-        }
+
         #endregion
         public virtual void ChangeName(string first, string last)
         {
@@ -103,11 +145,14 @@ namespace Company
             hireDate = y;
             y = DateTime.Today.AddYears(-1);
         }
+         public void Fire(DateTime y)
+        {
+            terminateDate = y;
+            y = DateTime.Today;
+        }
 
-        //public void Raise(double more)
-        //{
-        //    payRate * 1.04 = more;
-        //}
+
+
 
 
 
