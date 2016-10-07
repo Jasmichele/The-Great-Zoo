@@ -9,8 +9,8 @@ namespace Company
     public class Employee : Person
     {
         #region variables
-        DateTime hireDate;
-        DateTime terminateDate;
+        string hire;
+        string terminateDate;
         double payGrade;
         double hoursWorekd;
         double payRate;
@@ -29,34 +29,9 @@ namespace Company
         }
 
         #region Proerties
-        public DateTime HireDate
-        {
-            get
-            {
-                return hireDate;
-            }
-        }
+        
 
-        public DateTime TerminateDate
-        {
-            get
-            {
-                return terminateDate;
-            }
-        }
-
-        public double PayGrade
-        {
-            get
-            {
-                return payGrade;
-            }
-
-            set
-            {
-                payGrade = value;
-            }
-        }
+       
 
         public Department Dpt
         {
@@ -125,6 +100,19 @@ namespace Company
             }
         }
 
+        public string Hire
+        {
+            get
+            {
+                return hire;
+            }
+
+            set
+            {
+                hire = value;
+            }
+        }
+
         public double Raise()
         {
            
@@ -140,16 +128,8 @@ namespace Company
             L = last;
         }
 
-        public void Start(DateTime y)
-        {
-            hireDate = y;
-            y = DateTime.Today.AddYears(-1);
-        }
-         public void Fire(DateTime y)
-        {
-            terminateDate = y;
-            y = DateTime.Today;
-        }
+     
+ 
 
 
 
