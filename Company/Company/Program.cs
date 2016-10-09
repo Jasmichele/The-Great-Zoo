@@ -120,7 +120,7 @@ namespace Company
             //{
             //    Console.WriteLine("Employee {0} {1} pay rate is {2}", myEmply[i].F, myEmply[i].L, myEmply[i].PayRate);
             //}
-
+            double newNum;
          
 
             while (go)
@@ -131,17 +131,25 @@ namespace Company
                 Console.WriteLine("Enter Employee First Name");
                 string respone = Console.ReadLine();
                 first.F = respone;
+                Console.Clear();
                 Console.WriteLine("Enter Employee Last Name");
                 string arespone = Console.ReadLine();
                 first.L = arespone;
                 Console.Clear();
-                Console.WriteLine("Enter Emploee's Hire Date");
+                Console.WriteLine("Enter Employee's Hire Date MM/DD/YY");
                 string brespone = Console.ReadLine();
                 first.Hire = brespone;
                 Console.Clear();
-                Console.WriteLine("Enter Emploee's Pay Rate");
+                Console.WriteLine("Enter Employee's Pay Rate");
                 string crespone = Console.ReadLine();
-                first.PayRate = Convert.ToDouble(crespone);
+                if (!Double.TryParse(crespone, out newNum))
+                {
+                    Console.WriteLine("You didn't enter a #");
+                }
+                else
+                Console.WriteLine("Enter Employee's Pay Rate");
+                string drespone = Console.ReadLine();
+                first.PayRate = Convert.ToDouble(drespone);
                 myEmply.Add(first);
 
                 Console.Clear();
